@@ -1,0 +1,23 @@
+## TASK ONE ##
+
+mkdir super_secret_stuff
+cd super_secret_stuff
+echo "This is a secret message" > top_secret.txt
+sudo updatedb
+locate top_secret.txt > ~/secret_place.txt
+
+## TASK TWO ##
+
+sudo find -size +1M -maxdepth 4 -type f -exec ls -lh {} \; | sort -k 5hr > ~/filesize.txt
+
+## TASK THREE ##
+
+nano hungry.sh
+## inside the bash script ##
+#!/bin/bash
+echo "I am hungry. Feed me data." >> ~/demands.txt
+date >> ~/demands.log
+
+## automate the script
+crontab -e
+* * * * * bash ~/hungry.sh
